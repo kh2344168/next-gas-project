@@ -1,13 +1,14 @@
 "use client";
 
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function LoginView() {
+  const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-
   const isFormValid = email !== "" && password !== "";
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -30,9 +31,7 @@ export default function LoginView() {
 
     setError("");
 
-    console.log("Login success");
-    console.log("Email:", email);
-    console.log("Password:", password);
+ router.push("/dashboard");
   }
 
   return (
