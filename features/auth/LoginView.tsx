@@ -41,17 +41,17 @@ export default function LoginView() {
           <Image
             src="/images/auth/login/login-img.png"
             alt=""
-            width={1083}
-            height={1083}
-            className="absolute left-[-123px] top-0 z-0 h-[1083px] w-[1083px] opacity-100"
+            width={900}
+            height={900}
+            className="absolute left-[-123px] top-0 z-0 h-[800px] w-[800px] opacity-100"
           />
 
           <div className="relative z-10">
-            <h1 className="text-6xl font-extrabold text-[#3D5161]">
+            <h1 className="text-4xl font-extrabold text-[#3D5161]">
               WELCOME TO FMS
             </h1>
 
-            <p className="mt-7 max-w-lg text-2xl font-semibold text-[#3D5161]">
+            <p className="mt-7 max-w-lg text-xl font-semibold text-[#3D5161]">
               Ask the admin to create an account for you to start viewing our
               Dashboards.
             </p>
@@ -62,13 +62,13 @@ export default function LoginView() {
           </div>
         </section>
 
-        <section className="flex w-[500px] items-center justify-center bg-[#ff795c]">
+        <section className="flex w-[400px] items-center justify-center bg-[#ff795c]">
           <div className="w-[80%]">
             <div className="mb-20 flex justify-center">
               <Image
                 src="/images/auth/login/brk-logo-trandy.png"
                 alt="TAQA logo"
-                width={180}
+                width={150}
                 height={150}
               />
             </div>
@@ -85,12 +85,12 @@ export default function LoginView() {
                 placeholder="elka@qq.com"
                 value={email}
                 onChange={(event) => setEmail(event.target.value)}
-                className="w-full rounded-full bg-white/60 px-6 py-4 text-lg outline-none placeholder:text-slate-600"
+                className="w-full rounded-full bg-white/60 px-5 py-3 text-md outline-none placeholder:text-slate-600"
               />
 
               <div className="relative">
                 <svg
-                  className="absolute left-5 top-1/2 h-8 w-8 -translate-y-1/2 text-slate-600"
+                  className="absolute left-5 top-1/2 h-6 w-6 -translate-y-1/2 text-slate-600"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -109,14 +109,14 @@ export default function LoginView() {
                   placeholder="PASSWORD"
                   value={password}
                   onChange={(event) => setPassword(event.target.value)}
-                  className="w-full rounded-full bg-white/60 py-4 pl-14 pr-6 text-lg outline-none placeholder:text-slate-600"
+                  className="w-full rounded-full bg-white/60 py-2 pl-14 py-3 text-md outline-none placeholder:text-slate-600"
                 />
               </div>
 
               <button
                 type="submit"
                 disabled={!isFormValid}
-                className="w-full rounded-full bg-white px-6 py-4 text-lg font-bold text-slate-700 disabled:cursor-not-allowed disabled:bg-white/50 disabled:text-slate-400"
+                className="w-full rounded-full bg-white px-6 py-3 text-lg font-bold text-slate-700 disabled:cursor-not-allowed disabled:bg-white/50 disabled:text-slate-400"
               >
                 LOGIN
               </button>

@@ -7,6 +7,8 @@ const stations = [
     alarm: 120,
     warning: 1926,
     dispenser: "2/3",
+    imgSrc: "/icons/header/gas-station-svgrepo-com.svg",
+    imgSrcGroup: "/icons/header/Group 477.svg",
   },
   {
     id: 2,
@@ -16,6 +18,8 @@ const stations = [
     alarm: 120,
     warning: 1926,
     dispenser: "0/3",
+    imgSrc: "/icons/header/gas-station-svgrepo-no.svg",
+    imgSrcGroup: "/icons/header/Group 477.svg",
   },
   {
     id: 3,
@@ -25,6 +29,8 @@ const stations = [
     alarm: 120,
     warning: 1926,
     dispenser: "2/3",
+    imgSrc: "/icons/header/gas-station-svgrepo-com.svg",
+    imgSrcGroup: "/icons/header/Group 477.svg",
   },
 ];
 
@@ -36,7 +42,11 @@ export default function ListView() {
         {/* Filter */}
         <div className="flex items-center gap-[16px]">
           <div className="flex items-center gap-[8px] text-[#3D5161]">
-            <span className="text-[20px] leading-none">≡</span>
+            <span className="flex h-[14px] w-[18px] items-center flex-col gap-[3px]">
+              <span className="h-[3px] w-[18px] rounded-full bg-[#3D5161]" />
+              <span className="h-[3px] w-[12px] rounded-full bg-[#3D5161]" />
+              <span className="h-[3px] w-[7px] rounded-full bg-[#3D5161]" />
+            </span>
             <span className="text-[12px] font-bold">Filter:</span>
           </div>
 
@@ -52,7 +62,11 @@ export default function ListView() {
         {/* Sort */}
         <div className="flex items-center gap-[28px] text-[#3D5161]">
           <div className="flex items-center gap-[8px]">
-            <span className="text-[20px] leading-none">≡</span>
+            <span className="flex h-[14px] w-[18px] flex-col items-start gap-[3px]">
+              <span className="h-[3px] w-[18px] rounded-full bg-[#3D5161]" />
+              <span className="h-[3px] w-[12px] rounded-full bg-[#3D5161]" />
+              <span className="h-[3px] w-[7px] rounded-full bg-[#3D5161]" />
+            </span>
             <span className="text-[12px] font-bold">Sort by:</span>
           </div>
 
@@ -67,10 +81,10 @@ export default function ListView() {
         {stations.map((station) => (
           <div
             key={station.id}
-            className="flex h-[94px] items-center rounded-[10px] bg-white px-[36px]"
+            className="grid h-[94px] grid-cols-[1.6fr_1.1fr_1fr_1.1fr_1.2fr] items-center rounded-[10px] bg-white px-[36px]"
           >
             {/* Station Name */}
-            <div className="flex w-[270px] items-center gap-[10px]">
+            <div className="flex  items-center gap-[10px]">
               <span
                 className="mt-[28px] h-[8px] w-[8px] rounded-full"
                 style={{ backgroundColor: station.color }}
@@ -78,7 +92,7 @@ export default function ListView() {
 
               <div className="relative">
                 <img
-                  src="/icons/header/gas-station-svgrepo-com.svg"
+                  src={station.imgSrc}
                   alt="Station"
                   className="h-[42px] w-[42px] object-contain"
                 />
@@ -92,7 +106,7 @@ export default function ListView() {
             </div>
 
             {/* Compressor */}
-            <div className="w-[180px]">
+            <div >
               <h3 className="text-[15px] font-extrabold leading-[17px] text-[#3D5161]">
                 {station.state}
               </h3>
@@ -102,7 +116,7 @@ export default function ListView() {
             </div>
 
             {/* Alarm */}
-            <div className="flex w-[155px] items-center gap-[16px]">
+            <div className="flex items-center gap-[16px]">
               <span className="flex h-[22px] w-[22px] items-center justify-center rounded-full bg-[#F4C9BF]">
                 <span className="h-[9px] w-[9px] rounded-full bg-[#C95A4D]" />
               </span>
@@ -118,7 +132,7 @@ export default function ListView() {
             </div>
 
             {/* Warning */}
-            <div className="flex w-[170px] items-center gap-[16px]">
+            <div className="flex items-center gap-[16px]">
               <span className="flex h-[22px] w-[22px] items-center justify-center rounded-full bg-[#FFE9A9]">
                 <span className="h-[9px] w-[9px] rounded-full bg-[#FFC21A]" />
               </span>
@@ -136,7 +150,7 @@ export default function ListView() {
             {/* Dispenser */}
             <div className="flex items-center gap-[14px]">
               <img
-                src="/icons/header/gas-station-svgrepo-com.svg"
+                src={station.imgSrcGroup}
                 alt="Dispenser"
                 className="h-[34px] w-[34px] object-contain"
               />

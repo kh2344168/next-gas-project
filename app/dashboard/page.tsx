@@ -2,9 +2,11 @@
 import ListView from "@/components/shared/ListView";
 import dynamic from "next/dynamic";
 import Header from "@/components/shared/Header";
+import { useRouter } from "next/navigation";
 const MapView = dynamic(() => import("@/components/shared/MapView"), {
   ssr: false,
 });
+
 import { useState } from "react";
 const sidebarIcons = [
   {
@@ -35,16 +37,17 @@ const sidebarIcons = [
 ];
 
 export default function DashboardPage() {
+  const router = useRouter();
   const [activeIcon, setActiveIcon] = useState("control-room");
   const [view, setView] = useState("map");
   return (
     <main className="min-h-screen bg-[#f7f7f7] ">
       <div className="relative h-[100vh] w-full border border-[#dddddd] bg-white">
-       <Header activeView={view} setActiveView={setView} />
+        <Header activeView={view} setActiveView={setView} />
 
- <section className="absolute left-[66px] top-[70px] h-[calc(100%-70px)] w-[calc(100%-66px)] overflow-hidden bg-[#f5f5f5]">
-  {view === "map" ? <MapView /> : <ListView />}
-</section>
+        <section className="absolute left-[66px] top-[70px] h-[calc(100%-70px)] w-[calc(100%-66px)] overflow-hidden bg-[#f5f5f5]">
+          {view === "map" ? <MapView /> : <ListView />}
+        </section>
         {/* Sidebar */}
         <aside className="absolute left-0 top-0 flex h-full w-[66px] flex-col items-center rounded-r-[18px] bg-[#ff7958] py-7 text-white">
           {/* Logo */}
